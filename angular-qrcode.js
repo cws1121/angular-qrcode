@@ -42,7 +42,7 @@ angular.module('monospaced.qrcode', [])
             canvas = $canvas[0],
             context = canvas2D ? canvas.getContext('2d') : null,
             download = 'download' in attrs,
-            downloadTitle,
+            title = attrs.title,
             href = attrs.href,
             link = download || href ? document.createElement('a') : '',
             trim = /^\s+|\s+$/g,
@@ -123,8 +123,8 @@ angular.module('monospaced.qrcode', [])
               }
 
               if (download) {
-                  if (downloadTitle){
-                      domElement.download = downloadTitle + '.png';
+                  if (title){
+                      domElement.download = title + '.png';
                   } else {
                       domElement.download = 'qrcode.png';
                   }
