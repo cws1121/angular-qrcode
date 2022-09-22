@@ -233,6 +233,15 @@ angular.module('monospaced.qrcode', [])
           href = value;
           render();
         });
+          
+        attrs.$observe('title', function(value) {
+          if (!value) {
+            return;
+          }
+
+          title = value;
+          render();
+        });
       }
     };
   }]);
